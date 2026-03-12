@@ -1,0 +1,13 @@
+.vs/
+.vsconfig
+Library/
+Logs/
+obj/
+Builds/
+Logs/
+obj/
+QCAR/
+Temp/
+*.csproj
+*.sln
+UserSettings/
