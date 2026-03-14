@@ -34,32 +34,6 @@ TechnologyVersionUnity2022.3.26f1OpenXR Plugin1.10.0XR Interaction Toolkit3.0.3O
 📡 API Endpoints
 MethodEndpointDescriptionPOST/api/loginUser authenticationGET/api/projectsGet all projectsGET/api/projects/:id/floorsGet floors for a project
 
-🏗️ Project Structure
-VR-Assignment/
-├── Assets/
-│   ├── Scripts/
-│   │   ├── API/
-│   │   │   ├── APIManager.cs
-│   │   │   ├── AuthAPI.cs
-│   │   │   └── ProjectAPI.cs
-│   │   ├── Managers/
-│   │   │   ├── NavigationManager.cs
-│   │   │   ├── SessionManager.cs
-│   │   │   └── ToastManager.cs
-│   │   ├── UI/
-│   │   │   ├── LoginUI.cs
-│   │   │   ├── ProjectListUI.cs
-│   │   │   └── FloorDropdownUI.cs
-│   │   └── XR/
-│   │       └── XRUISetup.cs
-│   └── Scenes/
-│       ├── LoginScene
-│       ├── ProjectListScene
-│       └── FloorSelectionScene
-└── backend/
-    ├── index.js
-    └── package.json
-
 ▶️ How to Run
 
 Install APK on Meta Quest 2/3/Pro
