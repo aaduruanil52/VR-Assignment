@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ViSNET.API;
 using ViSNET.Managers;
-
+using UnityEngine.EventSystems;
 namespace ViSNET.UI
 {
     /// <summary>
@@ -96,6 +96,13 @@ namespace ViSNET.UI
                 string capturedName = floorName;
                 var btn = item.GetComponent<Button>();
                 btn?.onClick.AddListener(() => OnFloorSelected(capturedName, item));
+
+
+                EventTrigger trigger = item.AddComponent<EventTrigger>();
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerDown;
+                entry.callback.AddListener((data) => OnFloorSelected(capturedName, item));
+                trigger.triggers.Add(entry);
             }
         }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ViSNET.API;
 using ViSNET.Managers;
-
+using UnityEngine.EventSystems;
 namespace ViSNET.UI
 {
     /// <summary>
@@ -71,7 +71,14 @@ namespace ViSNET.UI
                 int   id   = project.id;
                 string name = project.name;
                 var btn = item.GetComponent<Button>();
-                btn?.onClick.AddListener(() => OnProjectSelected(id, name));
+                 btn?.onClick.AddListener(() => OnProjectSelected(id, name));
+
+               
+                EventTrigger trigger = item.AddComponent<EventTrigger>();
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerDown;
+                entry.callback.AddListener((data) => OnProjectSelected(id, name));
+                trigger.triggers.Add(entry);
             }
         }
 
@@ -79,6 +86,7 @@ namespace ViSNET.UI
 
         private void OnProjectSelected(int projectId, string projectName)
         {
+            Debug.Log("Button was clicked");
             SessionManager.Instance.SetProject(projectId, projectName);
             ToastManager.Instance?.Show($"Project Selected: {projectName}");
             NavigationManager.Instance.GoToFloors();
