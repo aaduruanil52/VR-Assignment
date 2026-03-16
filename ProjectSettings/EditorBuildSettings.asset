@@ -7,13 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/LoginScene.unity
-    guid: f28a4c9fc666f3e47bf6ee65fd4122f7
+    guid: b9e35e1503b6f814dbade9bf4a946214
   - enabled: 1
     path: Assets/Scenes/ProjectScene.unity
-    guid: e1f40865e3c132449859a12deec02b10
+    guid: bd003eb15347e07408eac80f2c4f098a
   - enabled: 1
     path: Assets/Scenes/FloorScene.unity
-    guid: c9b786bcc34202849a01af4a9d3c9db0
+    guid: f589066ddb42fad448f90a0e3b9e863c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

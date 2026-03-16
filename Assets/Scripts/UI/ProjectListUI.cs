@@ -34,7 +34,7 @@ namespace ViSNET.UI
 
         private void LoadProjects()
         {
-            SetLoading(true);
+            SetLoading(false);
 
             ProjectAPI.Instance.GetProjects(
                 onSuccess: projects =>
@@ -79,6 +79,8 @@ namespace ViSNET.UI
                 entry.eventID = EventTriggerType.PointerDown;
                 entry.callback.AddListener((data) => OnProjectSelected(id, name));
                 trigger.triggers.Add(entry);
+
+                
             }
         }
 
@@ -86,6 +88,8 @@ namespace ViSNET.UI
 
         private void OnProjectSelected(int projectId, string projectName)
         {
+           // SetLoading(true);
+
             Debug.Log("Button was clicked");
             SessionManager.Instance.SetProject(projectId, projectName);
             ToastManager.Instance?.Show($"Project Selected: {projectName}");

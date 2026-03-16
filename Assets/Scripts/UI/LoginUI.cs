@@ -54,7 +54,7 @@ namespace ViSNET.UI
             AuthAPI.Instance.Login(username, password,
                 onSuccess: resp =>
                 {
-                    SetLoading(false);
+                    SetLoading(true);
                     SessionManager.Instance.SetUser(resp.user.id, resp.user.name);
                     ToastManager.Instance?.Show("Login Successful");
                     NavigationManager.Instance.GoToProjects();
@@ -85,5 +85,7 @@ namespace ViSNET.UI
             if (loadingOverlay) loadingOverlay.SetActive(loading);
             if (!loading && errorText) errorText.gameObject.SetActive(false);
         }
+
+
     }
 }

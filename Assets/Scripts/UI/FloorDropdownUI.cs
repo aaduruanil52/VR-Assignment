@@ -57,7 +57,7 @@ namespace ViSNET.UI
                 return;
             }
 
-            SetLoading(true);
+            SetLoading(false);
 
             ProjectAPI.Instance.GetFloors(
                 SessionManager.Instance.ProjectId,
@@ -91,7 +91,7 @@ namespace ViSNET.UI
                 if (label) label.text = floorName;
 
                 // Default background
-                SetItemColor(item, normalColor);
+               // SetItemColor(item, normalColor);
 
                 string capturedName = floorName;
                 var btn = item.GetComponent<Button>();
@@ -111,8 +111,8 @@ namespace ViSNET.UI
         private void OnFloorSelected(string floorName, GameObject item)
         {
             // Deselect previous
-            if (_selectedItem != null)
-                SetItemColor(_selectedItem, normalColor);
+            //if (_selectedItem != null)
+              //  SetItemColor(_selectedItem, normalColor);
 
             // Highlight new selection
             _selectedItem = item;

@@ -57,9 +57,15 @@ namespace ViSNET.Managers
         private static void LoadScene(string sceneName)
         {
             Debug.Log($"[NavigationManager] Loading {sceneName}");
+           // SceneManager.LoadScene(sceneName);
+
+            Instance.StartCoroutine(Instance.LoadSceneDelay(sceneName));
+        }
+        private IEnumerator LoadSceneDelay(string sceneName)
+        {
+            yield return new WaitForSeconds(1f);
             SceneManager.LoadScene(sceneName);
         }
 
-       
     }
 }
